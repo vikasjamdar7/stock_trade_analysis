@@ -1,0 +1,68 @@
+Installation and Setting up project
+
+A)Setting up Apache Kafka:
+1)Download Apache kafka from https://kafka.apache.org/downloads
+2)With steps given on https://kafka.apache.org/quickstart start zookeeper server and Kafka server
+For windows starting zookeeper server will be:
+bin/windows/zookeeper-server-start.bat config/zookeeper.properties
+For starting Kafka server command will be:
+bin/windows/kafka-server-start.bat config/server.properties
+Note:Based on your OS you need to update the .properties file.
+
+B)Setting up Python:
+1)Download python 3.X from python.org and install it.
+2)Add python path to Environment variable or create virtual environment
+
+B)Setting up project:
+1)Clone the project stock_trade_analysis from https://github.com/vikasjamdar7/stock_trade_analysis.git
+2)run the requirements.txt on your interpreter with command
+pip install -r requirement.txt
+Note: This command will install confluent_kafka (python client library for Kafka)
+
+3)The repository of project has following files:
+a)There are three csv files for which we have to read data and put on kafka server
+b)For this we have built solution_problem1.py. When you run this file it will read all csv file one by one and push
+all data to kafka server. After completing all file these files are archived to Data.zip
+To run solution_problem1.py use following command
+
+python solution_problem1.py --max_worker 3 --csv_folder_path C:\Users\91888\Documents\workspace\stock_trade_analysis --broker_host localhost --broker_port 9092
+
+Let understand the meaning for these comandline argument
+max_worker : Maximum threads that will be used to push data kafka server. Its default value will be 3.
+csv_folder_path: This is the path for csv folder. The default value for this current folder.
+broker_host : The host IP where Kafka is serving. Default value will be localhost
+broker_port: The port where kafka service is listening. Default value for this will be 9092
+
+After running this file all data in csv file will be pushed to kafka server with topic 'sample_data'. You may get output like:
+Adding messages to kafka for file: C:/Users/91888/Documents/workspace/stock_trade_analysis\cm07JAN2019bhav.csv
+Adding messages to kafka for file: C:/Users/91888/Documents/workspace/stock_trade_analysis\cm08JAN2019bhav.csv
+Adding messages to kafka for file: C:/Users/91888/Documents/workspace/stock_trade_analysis\cm09JAN2019bhav.csv
+Sending the last message EOM...
+All files data send to Kafka server. Hence Archiving all file to Data.zip
+['C:/Users/91888/Documents/workspace/stock_trade_analysis\\cm07JAN2019bhav.csv', 'C:/Users/91888/Documents/workspace/stock_trade_analysis\\cm08JAN2019bhav.csv', 'C:/Users/91888/Documents/workspace/stock_trade_analysis\\cm09JAN2019bhav.csv']
+
+c)Now our all csv data is available on Kafka for consumption and finding the max TOTTRDVAL
+For this run the 2nd script solution_problem2.py will following  cmd
+
+python solution_problem2.py --broker_host localhost --broker_port 9092
+
+where,
+broker_host : The host IP where Kafka is serving. Default value will be localhost
+broker_port: The port where kafka service is listening. Default value for this will be 9092
+
+After executing this file you will get following out:
+Maximum value for TOTTRDVAL found.
+result is:
+Date: 07-Jan-2019   Max TOTTRDVAL: 7717769611.75
+Date: 08-Jan-2019   Max TOTTRDVAL: 8080718598.2
+Date: 09-Jan-2019   Max TOTTRDVAL: 12299738074.8
+Sending the result on kafka with topic 'result'
+
+Here we have find the Max TOTTRDVAL value for each date. Also we are again sending this information on kafka with topic result.
+
+d)kafka_producer.log  -- logger for Kafka producer
+e)kafka_consumer.log -- logger for kafka consumer.
+
+
+
+

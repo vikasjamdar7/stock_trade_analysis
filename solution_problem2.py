@@ -63,10 +63,12 @@ class Kafka_Consumer_Wrapper:
                     if list_data == "EOM":
                         print("Maximum value for TOTTRDVAL found.")
                         print("result is:")
+                        final_result = {}
                         for date_obj in result:
                             print("Date: %s   Max TOTTRDVAL: %s" % (date_obj.strftime('%d-%b-%Y'), result[date_obj]))
+                            final_result[date_obj.strftime('%d-%b-%Y')] = result[date_obj]
                         print("Sending the result on kafka with topic 'result'")
-                        producer.produce_message("result", json.dumps(result))
+                        producer.produce_message("result", json.dumps(final_result))
                         break
                     record_date = datetime.datetime.strptime(list_data[10], '%d-%b-%Y')
                     if record_date not in result:
