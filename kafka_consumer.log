@@ -1,0 +1,78 @@
+2019-10-14 22:32:33,268 ::  ERROR :: Traceback (most recent call last):
+  File "C:/Users/91888/Documents/workspace/solution_problem2.py", line 69, in consume_message
+    record_date = datetime.datetime.strptime(list_data[10],'%d-%b-%Y')
+IndexError: string index out of range
+
+2019-10-14 22:45:31,756 ::  ERROR :: Traceback (most recent call last):
+  File "C:/Users/91888/Documents/workspace/solution_problem2.py", line 69, in consume_message
+    producer.produce_message("result",result)
+  File "C:/Users/91888/Documents/workspace/solution_problem2.py", line 30, in produce_message
+    self.producer.produce(topic, message.encode('utf-8'))
+AttributeError: 'dict' object has no attribute 'encode'
+
+2019-10-14 23:32:34,018 ::  ERROR :: Traceback (most recent call last):
+  File "C:/Users/91888/Documents/workspace/solution_problem2.py", line 69, in consume_message
+    producer.produce_message("result", json.dumps(result))
+  File "c:\users\91888\appdata\local\programs\python\python37\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "c:\users\91888\appdata\local\programs\python\python37\Lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "c:\users\91888\appdata\local\programs\python\python37\Lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+TypeError: keys must be str, int, float, bool or None, not datetime.datetime
+
+2019-10-14 23:44:21,606 ::  ERROR :: Traceback (most recent call last):
+  File "C:/Users/91888/Documents/workspace/solution_problem2.py", line 69, in consume_message
+    producer.produce_message("result", json.dumps(result))
+  File "c:\users\91888\appdata\local\programs\python\python37\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "c:\users\91888\appdata\local\programs\python\python37\Lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "c:\users\91888\appdata\local\programs\python\python37\Lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+TypeError: keys must be str, int, float, bool or None, not datetime.datetime
+
+2019-10-15 00:16:32,650 ::  ERROR :: Traceback (most recent call last):
+  File "C:/Users/91888/Documents/workspace/solution_problem2.py", line 69, in consume_message
+    producer.produce_message("result", json.dumps(result))
+  File "c:\users\91888\appdata\local\programs\python\python37\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "c:\users\91888\appdata\local\programs\python\python37\Lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "c:\users\91888\appdata\local\programs\python\python37\Lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+TypeError: keys must be str, int, float, bool or None, not datetime.datetime
+
+2019-10-15 00:28:23,332 ::  ERROR :: Traceback (most recent call last):
+  File "C:/Users/91888/Documents/workspace/stack_trade_analysis/solution_problem2.py", line 69, in consume_message
+    producer.produce_message("result", json.dumps(result))
+  File "c:\users\91888\appdata\local\programs\python\python37\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "c:\users\91888\appdata\local\programs\python\python37\Lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "c:\users\91888\appdata\local\programs\python\python37\Lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+TypeError: keys must be str, int, float, bool or None, not datetime.datetime
+
+2019-10-15 00:41:31,172 ::  ERROR :: Traceback (most recent call last):
+  File "C:/Users/91888/Documents/workspace/stack_trade_analysis/solution_problem2.py", line 69, in consume_message
+    producer.produce_message("result", json.dumps(result))
+  File "c:\users\91888\appdata\local\programs\python\python37\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "c:\users\91888\appdata\local\programs\python\python37\Lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "c:\users\91888\appdata\local\programs\python\python37\Lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+TypeError: keys must be str, int, float, bool or None, not datetime.datetime
+
+2019-10-15 00:46:24,952 ::  ERROR :: Traceback (most recent call last):
+  File "C:/Users/91888/Documents/workspace/stack_trade_analysis/solution_problem2.py", line 69, in consume_message
+    producer.produce_message("result", json.dumps(result))
+  File "c:\users\91888\appdata\local\programs\python\python37\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "c:\users\91888\appdata\local\programs\python\python37\Lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "c:\users\91888\appdata\local\programs\python\python37\Lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+TypeError: keys must be str, int, float, bool or None, not datetime.datetime
+
